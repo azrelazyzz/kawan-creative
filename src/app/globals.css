@@ -5,7 +5,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --heading-font: 'DM Serif Display', serif; /* Elegant serif heading font */
+  --body-font: 'Montserrat', sans-serif; /* Stylish body font */
 }
+
+/* Make sure to import the fonts in your HTML or CSS */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@400;600&display=swap');
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,5 +22,49 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--body-font);
+  font-size: 16px; /* Default font size */
+  line-height: 1.6; /* Standard line height for readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--foreground);
+  margin: 0;
+}
+
+p, a, li, span, div {
+  font-family: var(--body-font);
+  color: var(--foreground);
+}
+
+a {
+  text-decoration: none;
+  color: var(--foreground);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #000000; /* Text turns black on hover */
+}
+
+button, input, textarea {
+  font-family: var(--body-font);
+  color: var(--foreground);
+}
+
+/* For CTA buttons */
+.cta-button {
+  background-color: #FFA500; /* Orange */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #e69500; /* Darker Orange */
+  transform: scale(1.05); /* Slight scale on hover */
 }
