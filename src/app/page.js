@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -7,6 +9,8 @@ import Grid from "./components/Grid";
 import TestimonialCard from "./components/TestimonialCard";
 import IconCard from "./components/IconCard";
 import Card from "./components/Card";
+
+import { CldImage } from 'next-cloudinary';
 
 import { buttonClass } from "./twClasses";
 
@@ -61,8 +65,7 @@ export default function Home() {
       <Navbar />
 
       <Hero
-        // backgroundImage="placeholders/impala.jpg"
-        videoSource="mini-electric-pik-launch/MINI Electric 1 Minute.mp4"
+        videoSource="newkawanmedia/Mini Electric - GIIAS 2022.MP4"
         title="Your Vision, Our Expertise."
         subtitle="We specialize in planning and executing weddings, corporate events, and private parties that leave a lasting impression."
         buttons={[
@@ -76,10 +79,15 @@ export default function Home() {
         backgroundImage=""
         title="Placeholder Title"
         subtitle="Placeholder Subtitle"
-      // link={{ href: "about", text: "Learn More" }}
       />
 
-      <Hero backgroundImage="porsche-roughroads/editors_images_1716370302386-Porsche+Roughroads+Guoco+Midtown+pic2.jpg" />
+      <Hero
+        backgroundImage="giias2024/FA-C1ST7099.jpg"
+      />
+
+      <Hero
+        videoSource="newkawanmedia/Highlight BMW i7.MP4"
+      />
 
       <div className="py-12">
         <div className="text-center mb-8">
@@ -100,74 +108,20 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <div className="py-12">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-semibold mb-2">Our Work Speaks for Itself</h2>
-        </div>
-        <Carousel images={imageList} />
-        <div className="text-center mt-8">
-          <a
-            href="/projects"
-            className={buttonClass}
-          >
-            See More Events
-          </a>
-        </div>
-      </div> */}
+      <Hero backgroundImage="porsche-roughroads/editors_images_1716370302386-Porsche+Roughroads+Guoco+Midtown+pic2.jpg" />
 
       <Hero
-        // backgroundImage="placeholders/impala.jpg"
+        videoSource="newkawanmedia/ASTRA FINANCIAL -17.08.2022.MP4"
+      />
+
+      <Hero backgroundImage="newkawanmedia/1.jpg" />
+
+      <Hero
         videoSource="porsche-taycan-launch/Porsche Taycan Marketing Campaign.mp4"
-        // title="Placeholder"
-        // subtitle="We specialize in planning and executing weddings, corporate events, and private parties that leave a lasting impression."
-        textPosition="center"
-        imagePosition="center"
-      />
-
-      <Hero
-        backgroundImage="giias2024/FA-C1ST7099.jpg"
-      />
-
-      <Hero
-        backgroundImage="giias2024/C1ST8485.JPG"
-      />
-
-      {/* Testimonials Section */}
-      {/* <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-semibold text-center text-gray-800 mb-12">
-            What Our Clients Say
-          </h2>
-
-          <Grid
-            items={testimonials}
-            renderItem={(item) => <TestimonialCard {...item} />}
-            preserveSize={false}
-          />
-
-        </div>
-      </section>
-
-      <Grid
-        items={cardsData}
-        renderItem={(item) => <Card {...item} />}
-      /> */}
-
-      <Hero
-        backgroundImage=""
-        title="Placeholder Title"
-        subtitle="Placeholder Subtitle"
-        link={{ href: "about", text: "Learn More" }}
-      />
-
-      <Hero
-        videoSource="bmw-i7/BMW I7 EVENT 2023.MOV"
       />
 
       <Hero backgroundImage="giias2024/mini-launch/IMG_8492.JPG" />
 
-      <Hero backgroundImage="giias2024/mini-launch/GIAS7848.jpg" />
-
       <Hero
         backgroundImage=""
         title="Placeholder Title"
@@ -176,8 +130,25 @@ export default function Home() {
       />
 
       <Hero
-        videoSource="porschegt3/Ausome Porche GT3  1 Menit.mp4"
+        videoSource="newkawanmedia/Highlight - Porsche Ausome Kreatif Indonesia R3.mp4"
       />
+
+      <Hero
+        videoSource="newkawanmedia/BMW X JEFF KOONS.MP4"
+      />
+
+      <Hero backgroundImage="newkawanmedia/IMG_2261.JPG" />
+
+      <Hero backgroundImage="newkawanmedia/P90535296_highRes_mini-pitstop-at-one-.jpg" />
+
+      <Hero
+        backgroundImage=""
+        title="Placeholder Title"
+        subtitle="Placeholder Subtitle"
+        link={{ href: "about", text: "Learn More" }}
+      />
+
+      <Hero backgroundImage="newkawanmedia/20220311_BMW_2SERIES_LAUNCH_216.jpg" />
 
       <Hero backgroundImage="GJAW2024/IKO01904.jpg" />
 

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <img src="logo/newkawanlogo_cropped_og.png" alt="Logo" className="w-12 h-12 mr-2" />
+            {/* <img src="logo/newkawanlogo_cropped_og.png" alt="Logo" className="w-12 h-12 mr-2" /> */}
             <h2 className="text-2xl font-semibold">Kawan Creative</h2>
             <p className="text-sm mt-2">© {new Date().getFullYear()} Kawan Creative. All rights reserved.</p>
           </div>

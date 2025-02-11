@@ -9,6 +9,13 @@
   --body-font: 'Montserrat', sans-serif; /* Stylish body font */
 }
 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --heading-font: 'Century Gothic', sans-serif; /* Clean and modern heading font */
+  --body-font: 'Century Gothic', sans-serif; /* Consistent body font */
+}
+
 /* Make sure to import the fonts in your HTML or CSS */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@400;600&display=swap');
 
