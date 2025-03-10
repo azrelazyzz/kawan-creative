@@ -9,26 +9,26 @@ export default function Navbar() {
                 {/* Logo and Navigation Links */}
                 <div className="flex items-center space-x-8">
                     <a href="/" className="flex items-center">
-                        <img src="logo/newkawanlogo_cropped_og.png" alt="Logo" className="w-12 h-12 mr-2" />
+                        <img src="/logo/newkawanlogo_cropped_og.png" alt="Logo" className="w-12 h-12 mr-2" />
                         {/* <span className="text-xl font-bold">Logo</span> */}
                     </a>
 
                     {/* Navigation Links */}
                     <nav className="flex space-x-8">
                         <a
-                            href="about"
+                            href="/about"
                             className="text-base transition-colors"
                         >
                             About
                         </a>
                         <a
-                            href="projects"
+                            href="/projects"
                             className="text-base transition-colors"
                         >
                             Projects
                         </a>
                         <a
-                            href="testimonials"
+                            href="/testimonials"
                             className="text-base transition-colors"
                         >
                             Testimonials

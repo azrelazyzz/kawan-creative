@@ -1,6 +1,7 @@
 // components/Hero.js
 
 import { buttonClass } from "../twClasses";
+import Image from "next/image";
 
 export default function Hero({
     backgroundImage = "", // URL of the background image
@@ -10,15 +11,8 @@ export default function Hero({
     subtitle = "",
     buttons = [], // [{ href: "#", text: "Button 1" }, { href: "#", text: "Button 2" }]
     textPosition = "center", // "left", "right", or "center"
+    priority = false, // Whether to prioritize loading this image
 }) {
-    const style = backgroundImage && !videoSource
-        ? {
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-        }
-        : {};
-
     // Map textPosition prop to Tailwind classes
     const positionClasses = {
         left: "items-center justify-start text-left",
@@ -28,20 +22,35 @@ export default function Hero({
 
     return (
         <div
-            className={`relative w-full h-screen flex ${positionClasses[textPosition]} ${
+            className={`relative w-full h-screen flex group ${positionClasses[textPosition]} ${
                 !backgroundImage && !videoSource && backgroundColor
             }`}
-            style={style}
         >
             {/* Render video if videoSource is provided */}
             {videoSource && (
                 <video
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0"
                     src={videoSource}
                     autoPlay
                     loop
                     muted
+                    playsInline
                 />
+            )}
+
+            {/* Background Image */}
+            {backgroundImage && !videoSource && (
+                <div className="absolute inset-0 group">
+                    <Image
+                        src={backgroundImage}
+                        alt={title || "Background image"}
+                        fill
+                        priority={priority}
+                        sizes="100vw"
+                        className="object-cover filter grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0"
+                        quality={90}
+                    />
+                </div>
             )}
 
             {/* Content */}
@@ -65,7 +74,7 @@ export default function Hero({
 
             {/* Overlay for better contrast */}
             {(backgroundImage || videoSource) && (
-                <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all duration-500 ease-in-out"></div>
             )}
         </div>
     );
